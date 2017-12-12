@@ -8,7 +8,9 @@ import org.springframework.web.servlet.ModelAndView;
 
 import in.nic.dao.CategpryDAO;
 import in.nic.dto.Category;
-
+interface Drawable{  
+    public void draw();  
+} 
 @Controller
 public class PageController {
 
@@ -20,9 +22,23 @@ public class PageController {
 	{
 		ModelAndView mv = new ModelAndView("page");
          mv.addObject("Title", "Home ");
-         mv.addObject("onClickhome", true);
+         mv.addObject("userClickhome", true);
          
          mv.addObject("categories", categoryDAO.list());
+         
+         int width=10;  
+         
+      /*   //without lambda, Drawable implementation using anonymous class  
+         Drawable d=new Drawable(){  
+             public void draw(){System.out.println("Drawing "+width);}  
+         };  
+         d.draw(); */ 
+         
+         //with lambda  
+         Drawable d2=()->{  
+             System.out.println("Drawing "+width);  
+         };  
+         d2.draw();  
 		return mv;
 	}
 	
@@ -31,42 +47,42 @@ public class PageController {
 	{
 		ModelAndView mv = new ModelAndView("page");
          mv.addObject("Title", "About Us");
-         mv.addObject("onClickabout", true);
+         mv.addObject("userClickabout", true);
 		return mv;
 	}
 	
 	
-	@RequestMapping(value ={"/service" })
+	@RequestMapping(value ="/service" )
 	public ModelAndView service()
 	{
 		ModelAndView mv = new ModelAndView("page");
          mv.addObject("Title", "Service");
-         mv.addObject("onClickservice", true);
+         mv.addObject("userClickservice", true);
 		return mv;
 	}
-	@RequestMapping(value ={"/contact" })
+	@RequestMapping(value ="/contact" )
 	public ModelAndView contact()
 	{
 		ModelAndView mv = new ModelAndView("page");
          mv.addObject("Title", "Contact Us");
-         mv.addObject("onClickcontact", true);
+         mv.addObject("userClickcontact", true);
 		return mv;
 	}
-	@RequestMapping(value ={"/issue" })
+	@RequestMapping(value ="/issue" )
 	public ModelAndView issue()
 	{
 		ModelAndView mv = new ModelAndView("page");
          mv.addObject("Title", "Issue Problem");
-         mv.addObject("onClickissue", true);
+         mv.addObject("userClickissue", true);
 		return mv;
 	}
 
-	@RequestMapping(value ={"/show/all/products"})
+/*	@RequestMapping(value ={"we","/show/all/products"})
 	public ModelAndView showAllProducts()
 		{
 		ModelAndView mv = new ModelAndView("page");
         
-       System.out.println("Reached Here");
+     
          
          // adding title category name
          mv.addObject("Title", "All Products");
@@ -74,17 +90,31 @@ public class PageController {
          //adding list of category
          mv.addObject("categories", categoryDAO.list());
          
-         mv.addObject("onClickAllProducts", true);
+         mv.addObject("userClickAllProducts", true);
 		return mv;
+	}
+	*/
+	
+	@RequestMapping(value = "/show/all/products")
+	public ModelAndView showAllProducts() {		
+		ModelAndView mv = new ModelAndView("page");		
+		mv.addObject("title","All Products");
+		
+		//passing the list of categories
+		mv.addObject("categories", categoryDAO.list());
+		
+		mv.addObject("userClickAllProducts",true);
+		return mv;				
 	}
 	
 	
-	@RequestMapping(value ={"/we"})
+	
+	@RequestMapping(value ="/we3")
 	public ModelAndView we()
 		{
 		ModelAndView mv = new ModelAndView("page");
         
-       System.out.println("Reached Here");
+       
          
          // adding title category name
          mv.addObject("Title", "All Products");
@@ -96,7 +126,7 @@ public class PageController {
 		return mv;
 	}
 	
-	@RequestMapping(value ={"/show/category/{id}/products" })
+	@RequestMapping(value ="/show/category/{id}/products" )
 	public ModelAndView showCategoryProducts(@PathVariable("id") int id )
 		{
 		ModelAndView mv = new ModelAndView("page");
@@ -112,7 +142,7 @@ public class PageController {
          //adding list of category
          mv.addObject("categories", categoryDAO.list());
          
-         mv.addObject("onClickCategoryProducts", true);
+         mv.addObject("userClickCategoryProducts", true);
 		return mv;
 	}
 }

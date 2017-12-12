@@ -57,26 +57,26 @@
 		<!-- Page Content -->
 		<div class="container content">
 
-			<c:if test="${onClickissue == true}">
+			<c:if test="${userClickissue == true}">
 				<%@ include file="table.jsp"%>
 			</c:if>
 
 			<!-- Table include -->
-			<c:if test="${onClickhome == true}">
+			<c:if test="${userClickhome == true}">
 				<%@ include file="home.jsp"%>
 			</c:if>
 
-			<c:if test="${onClickabout == true}">
+			<c:if test="${userClickabout == true}">
 				<%@ include file="about.jsp"%>
 			</c:if>
-			<c:if test="${onClickcontact == true}">
+			<c:if test="${userClickcontact == true}">
 				<%@ include file="contact.jsp"%>
 			</c:if>
-			<c:if test="${onClickservice == true}">
+			<c:if test="${userClickservice == true}">
 				<%@ include file="services.jsp"%>
 			</c:if>
-			<c:if test="${onClickCategoryProducts == true or onClickAllProducts == true }">
-				<%@ include file="listProduct.jsp"%>
+			<c:if test="${userClickCategoryProducts == true or userClickAllProducts == true }">
+				<%@ include file="listProducts.jsp"%>
 			</c:if>
 
 			<%-- <c:if test="${onClickAllProducts == true}">
