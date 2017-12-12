@@ -43,7 +43,7 @@ oldJavaWay();
 	 start =System.currentTimeMillis();
     newJavaWay();
     end =System.currentTimeMillis();
-    System.out.println("time take: " +(end-start));
+    System.out.println("time take:sdfs " +(end-start));
   }
 
   private static void oldJavaWay() {
