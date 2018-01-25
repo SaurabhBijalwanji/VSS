@@ -1,0 +1,24 @@
+/* html
+{
+	height: 100%;
+}
+body
+{
+	height: 100%;
+} */
+.wrapper
+{
+	min-height: 100%;
+	position: relative;
+}
+/* .footer
+{
+position: absolute;
+margin-bottom:10px;
+height: 60px;
+
+}
+.content
+{
+	padding-bottom: 60px;
+} */

@@ -30,14 +30,24 @@
 
 <!-- Bootstrap core CSS -->
 <link href="${css}/bootstrap.min.css" rel="stylesheet">
+<%-- <link href="${css}/theme1.css" rel="stylesheet"> --%>
 
 <!-- Custom styles for this template -->
-<link href="${css}/shop-homepage.css" rel="stylesheet">
+<%-- <link href="${css}/shop-homepage.css" rel="stylesheet"> --%>
 
 <!-- Custom styles for this template -->
 <link href="${css}/dataTables.bootstrap4.min.css" rel="stylesheet">
 <!-- Custom styles for this template -->
 <link href="${css}/bootstrap.css" rel="stylesheet">
+
+
+<%-- <!-- Custom styles for this template -->
+<link href="${css}/myapp.css" rel="stylesheet"> --%>
+
+
+
+
+
 
 <!-- Custom styles for this template -->
 <link href="${js}/dataTables.bootstrap.min.js" rel="stylesheet">
@@ -50,7 +60,7 @@
 <body>
 	<!-- Wrapper code here -->
 
-	<div class="wrapper">
+	<div >
 		<!-- Navigation -->
 		<!-- import  -->
 		<%@ include file="./shared/nav.jsp"%>

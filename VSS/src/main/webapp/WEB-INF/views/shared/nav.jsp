@@ -24,7 +24,7 @@
               <a class="nav-link" href="${contextRoot}/issue">Issues</a>
             </li>
                 <li class="nav-item" id="showAllproducts">
-              <a class="nav-link" href="${contextRoot}/we">View Products</a>
+              <a class="nav-link" href="${contextRoot}/show/all/products">View Products</a>
             </li>
           </ul>
         </div>
